@@ -7,15 +7,15 @@ const app = express();
 const port = 3000;
 const route = require('./routes');
 
-app.use(express.static(path.join(__dirname, 'public')));
+     app.use(express.static(path.join(__dirname, 'public')));
 
-app.use(
+        app.use(
     express.urlencoded({
         extended: true,
     }),
 );
 
-app.use(express.json());
+    pp.use(express.json());
 // HTTP logger
 app.use(morgan('combined'));
 
