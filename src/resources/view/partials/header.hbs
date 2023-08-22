@@ -1,22 +1,32 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="#">Navbar</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+  <div class="container">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/khoa-hoc/create">Add new course</a>
-      </li>
-    </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto">
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            <img
+              src="https://scontent.fhan5-11.fna.fbcdn.net/v/t39.30808-1/277755835_1393013377832392_2137630972130104203_n.jpg?stp=dst-jpg_p240x240&_nc_cat=100&ccb=1-7&_nc_sid=7206a8&_nc_ohc=1KohmRFU9x8AX9jlTXP&_nc_ht=scontent.fhan5-11.fna&oh=00_AfCs-dQ2ULYaDiOr96G1AAUI3kuQruVWN4qyjwnrddR23w&oe=64E3FC25"
+              alt="" class="user-avata">
+            Ngô Hiếu
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="/khoa-hoc/create">Thêm khóa học</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="/me/stored/courses">Khóa học của tôi</a>
+            <a class="dropdown-item" href="me/stored/news">Bài đăng của tôi</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="/dang-xuat">Đăng xuất</a>
+          </div>
+        </li>
+      </ul>
+    </div>
   </div>
 </nav>
