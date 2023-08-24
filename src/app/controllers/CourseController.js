@@ -20,36 +20,43 @@ class CourseController {
         res.render('courses/create');
     }
 
-
     // [GET] /khoa-hoc/:_id/edit
-    edit(req, res, next){
-        Course.findOne({_id: req.params._id})
-            .then(course => {
+    edit(req, res, next) {
+        Course.findOne({ _id: req.params._id })
+            .then((course) => {
                 res.render('courses/edit', {
-                    course: mongooseToObject(course)
-                })
+                    course: mongooseToObject(course),
+                });
             })
-            .catch(next)
+            .catch(next);
     }
 
     // [PUT] /khoa-hoc/:_id
-    update(req, res, next){
-        Course.updateOne({_id: req.params._id} , req.body)
+    update(req, res, next) {
+        Course.updateOne({ _id: req.params._id }, req.body)
             .then(() => {
                 res.redirect('/me/stored/courses');
             })
-            .catch(next)
+            .catch(next);
     }
 
     // [DELETE] /khoa-hoc/:_id
-    delete(req, res, next){
-        Course.deleteOne({_id: req.params._id})
+    delete(req, res, next) {
+        Course.delete({ _id: req.params._id })
             .then(() => {
                 res.redirect('back');
             })
-            .catch(next)
+            .catch(next);
     }
 
+    // [DELETE] /khoa-hoc/:_id
+    forceDelete(req, res, next) {
+        Course.deleteOne({ _id: req.params._id })
+            .then(() => {
+                res.redirect('back');
+            })
+            .catch(next);
+    }
 
     // [POST] /khoa-hoc/store
     store(req, res, next) {
@@ -57,8 +64,17 @@ class CourseController {
         course.image = `https://img.youtube.com/vi/${course.videoId}/sddefault.jpg`;
         course
             .save()
-            .then(() => res.redirect('/'))
+            .then(() => res.redirect('/me/stored/courses'))
             .catch((error) => {});
+    }
+
+    // [PUT] /khoa-hoc/:_id/restore
+    restore(req, res, next) {
+        Course.restore({ _id: req.params._id })
+            .then(() => {
+                res.redirect('back');
+            })
+            .catch(next);
     }
 }
 

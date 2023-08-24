@@ -2,6 +2,13 @@
 
 .card-course-item {
     margin-top: 16px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .user-avata {
