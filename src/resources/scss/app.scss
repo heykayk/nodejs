@@ -22,3 +22,13 @@
     border-radius: 50px;
     margin-right: 4px;
 }
+
+.description-item {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.detail-item {
+    margin: 0 100px;
+}

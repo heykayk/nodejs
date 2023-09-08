@@ -7,7 +7,10 @@ router.get('/:_id/edit', courseController.edit);
 router.get('/create', courseController.create);
 router.get('/:slug', courseController.show);
 router.post('/handle-form-actions', courseController.handleFromActions);
-router.post('/handle-trash-form-actions', courseController.handleTrashFromActions);
+router.post(
+    '/handle-trash-form-actions',
+    courseController.handleTrashFromActions,
+);
 router.post('/store', courseController.store);
 router.put('/:_id', courseController.update);
 router.patch('/:_id/restore', courseController.restore);

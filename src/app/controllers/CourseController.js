@@ -65,7 +65,7 @@ class CourseController {
         course
             .save()
             .then(() => res.redirect('/me/stored/courses'))
-            .catch((error) => { });
+            .catch((error) => {});
     }
 
     // [PUT] /khoa-hoc/:_id/restore
@@ -88,7 +88,7 @@ class CourseController {
                     .catch(next);
                 break;
             default:
-                res.json({ message: 'Aciton is invalid!!!' })
+                res.json({ message: 'Aciton is invalid!!!' });
         }
     }
 
@@ -96,14 +96,14 @@ class CourseController {
     handleTrashFromActions(req, res, next) {
         switch (req.body.action) {
             case 'restore':
-                Course.restore({ _id: {$in: req.body.courseIds} })
+                Course.restore({ _id: { $in: req.body.courseIds } })
                     .then(() => {
                         res.redirect('back');
                     })
                     .catch(next);
                 break;
             default:
-                res.json({ message: 'Aciton is invalid!!!' })
+                res.json({ message: 'Aciton is invalid!!!' });
         }
     }
 }
